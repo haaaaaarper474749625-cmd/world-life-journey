@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   cityPanels,
+  handControlPrinciples,
   heroStats,
   modules,
   quickActions,
@@ -31,16 +32,16 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/journey"
+                href="/create"
                 className="rounded-full bg-[#f0a24d] px-6 py-3 font-semibold text-[#091423] transition hover:bg-[#f6b56e]"
               >
-                Start prototype
+                Create your traveler
               </Link>
               <Link
-                href="/map"
+                href="/planner"
                 className="rounded-full border border-white/12 px-6 py-3 font-semibold text-white transition hover:border-[#f0a24d]/70"
               >
-                Explore world map
+                Plan your first day
               </Link>
             </div>
           </div>
@@ -59,6 +60,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionCard title="Why this feels hand controlled" eyebrow="Player agency">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {handControlPrinciples.map((item) => (
+            <article
+              key={item}
+              className="rounded-[1.5rem] border border-white/10 bg-white/4 p-5"
+            >
+              <p className="text-sm leading-7 text-[#dce6f2]">{item}</p>
+            </article>
+          ))}
+        </div>
+      </SectionCard>
 
       <div className="grid gap-8 xl:grid-cols-[1.1fr_0.9fr]">
         <SectionCard title="Today in your journey" eyebrow="Live snapshot">
@@ -104,7 +118,7 @@ export default function Home() {
       </div>
 
       <SectionCard title="App modules" eyebrow="Prototype navigation">
-        <div className="grid gap-4 lg:grid-cols-4">
+        <div className="grid gap-4 lg:grid-cols-3 xl:grid-cols-6">
           {modules.map((module) => (
             <Link
               key={module.title}
@@ -133,7 +147,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-white">{person.name}</h3>
                     <p className="mt-1 text-sm text-[#f7c58e]">
-                      {person.role} · {person.city}
+                      {person.role} - {person.city}
                     </p>
                   </div>
                   <span className="rounded-full bg-[#14304e] px-3 py-1 text-xs text-[#dce8f5]">

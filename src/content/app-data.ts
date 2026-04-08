@@ -16,10 +16,22 @@ export const quickActions = [
 
 export const modules = [
   {
+    title: "Create",
+    href: "/create",
+    eyebrow: "Player setup",
+    summary: "Define your origin city, starting budget, travel goal, and personal style.",
+  },
+  {
     title: "Map",
     href: "/map",
     eyebrow: "Route planning",
     summary: "Choose where to go next and see how time, cost, and exhaustion change.",
+  },
+  {
+    title: "Planner",
+    href: "/planner",
+    eyebrow: "Hand control",
+    summary: "Build your day hour by hour and trade money, energy, and relationships.",
   },
   {
     title: "Journey",
@@ -131,4 +143,66 @@ export const timeline = [
   "Accepted a weekend cafe shift to extend the travel budget.",
   "Booked a cultural class and unlocked a new local connection.",
   "Compared clinic costs before planning the next city move.",
+];
+
+export const travelerOrigins = [
+  { city: "Auckland", reason: "Island departure with high cost pressure and long-haul planning." },
+  { city: "Tokyo", reason: "Dense urban realism with strong transport systems and language pressure." },
+  { city: "Paris", reason: "Culture-heavy route with study, art, and relationship opportunities." },
+  { city: "Mexico City", reason: "A flexible gateway to the Americas with layered work options." },
+];
+
+export const travelerGoals = [
+  "Budget backpacking",
+  "Food discovery",
+  "Work and travel",
+  "Study abroad life",
+  "Slow healing journey",
+  "Romance-driven travel",
+];
+
+export const controlTraits = [
+  "Risk tolerant",
+  "Careful planner",
+  "Social explorer",
+  "Career focused",
+  "Culture seeker",
+  "Low-spend survivor",
+];
+
+export const plannerSlots = [
+  {
+    time: "08:00",
+    title: "Morning block",
+    options: [
+      { label: "Street breakfast", result: "+Mood 8, -$6, +Energy 6" },
+      { label: "Cheap hostel sleep-in", result: "+Energy 14, lose 2 hours" },
+      { label: "Language class", result: "+Skill 6, -$18, +Local trust 4" },
+    ],
+  },
+  {
+    time: "13:00",
+    title: "Afternoon block",
+    options: [
+      { label: "Cafe part-time shift", result: "+$42, -Energy 10" },
+      { label: "Museum and city walk", result: "+Culture 8, -$14, +Mood 10" },
+      { label: "Clinic visit", result: "-$28, +Health 12, lose 3 hours" },
+    ],
+  },
+  {
+    time: "19:00",
+    title: "Evening block",
+    options: [
+      { label: "Night market dinner", result: "-$12, +Mood 9" },
+      { label: "Meet a local friend", result: "+Relationship 10, -$9" },
+      { label: "Route planning session", result: "+Travel clarity, +Rest" },
+    ],
+  },
+];
+
+export const handControlPrinciples = [
+  "You choose the city, instead of following a forced chapter path.",
+  "You decide how to spend each day and what sacrifice is acceptable.",
+  "You can prioritize work, study, health, love, or exploration at any time.",
+  "Every major system shows trade-offs in money, time, energy, and connection.",
 ];

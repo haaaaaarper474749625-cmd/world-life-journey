@@ -4,7 +4,9 @@ import { BottomNav } from "@/components/bottom-nav";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/create", label: "Create" },
   { href: "/map", label: "Map" },
+  { href: "/planner", label: "Planner" },
   { href: "/journey", label: "Journey" },
   { href: "/social", label: "Social" },
   { href: "/profile", label: "Profile" },
@@ -20,9 +22,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               WJ
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-[#f7c58e]">
-                环球旅行
-              </p>
+              <p className="text-xs uppercase tracking-[0.35em] text-[#f7c58e]">Global route sim</p>
               <h1 className="text-lg font-semibold text-white">World Life Journey</h1>
             </div>
           </Link>
