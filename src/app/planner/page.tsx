@@ -1,9 +1,11 @@
 import { DayPlanner } from "@/components/day-planner";
+import { GameStatusBar } from "@/components/game-status-bar";
 import { SectionCard } from "@/components/section-card";
 
 export default function PlannerPage() {
   return (
     <div className="space-y-8">
+      <GameStatusBar />
       <SectionCard title="Day planner" eyebrow="Manual schedule control">
         <div className="max-w-3xl text-sm leading-8 text-[#c5d0dc]">
           Players should control how a day is spent instead of pressing a single

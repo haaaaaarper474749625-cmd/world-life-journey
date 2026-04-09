@@ -1,9 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { controlTraits, travelerGoals, travelerOrigins } from "@/content/app-data";
+import { useGameState } from "@/components/game-state-provider";
 
 export function CharacterCreator() {
+  const router = useRouter();
+  const { createTraveler } = useGameState();
   const [origin, setOrigin] = useState(travelerOrigins[0].city);
   const [goal, setGoal] = useState(travelerGoals[2]);
   const [trait, setTrait] = useState(controlTraits[1]);
@@ -125,6 +129,22 @@ export function CharacterCreator() {
             increases the need for part-time work. A social goal unlocks more
             relationship scenes. A study goal opens more education content first.
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              createTraveler({
+                origin,
+                goal,
+                trait,
+                startingBudget: budget,
+              });
+              router.push("/journey");
+            }}
+            className="w-full rounded-full bg-[#f0a24d] px-5 py-3 font-semibold text-[#091423] transition hover:bg-[#f6b56e]"
+          >
+            Start this life
+          </button>
         </div>
       </div>
     </div>

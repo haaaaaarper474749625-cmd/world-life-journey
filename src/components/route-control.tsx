@@ -1,9 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { worldRoutes } from "@/content/app-data";
+import { useGameState } from "@/components/game-state-provider";
 
 export function RouteControl() {
+  const router = useRouter();
+  const { applyRouteEffect } = useGameState();
   const [routeIndex, setRouteIndex] = useState(0);
   const [methodIndex, setMethodIndex] = useState(0);
 
@@ -96,6 +100,17 @@ export function RouteControl() {
               <p className="mt-2 text-lg font-semibold text-white">{method.impact}</p>
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              applyRouteEffect(`${route.from} to ${route.to}`, method.type, method.effect);
+              router.push("/journey");
+            }}
+            className="mt-5 w-full rounded-full bg-[#5ed2a0] px-5 py-3 font-semibold text-[#091423] transition hover:bg-[#7be1b4]"
+          >
+            Commit route choice
+          </button>
         </div>
       </div>
     </div>

@@ -1,9 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { plannerSlots } from "@/content/app-data";
+import { useGameState } from "@/components/game-state-provider";
 
 export function DayPlanner() {
+  const router = useRouter();
+  const { applyPlannerEffects } = useGameState();
   const [choices, setChoices] = useState<number[]>(plannerSlots.map(() => 0));
 
   const summary = useMemo(() => {
@@ -98,6 +102,17 @@ export function DayPlanner() {
           let players drag actions between time slots, carry unfinished tasks into
           tomorrow, and trigger city-specific events from each choice.
         </p>
+
+        <button
+          type="button"
+          onClick={() => {
+            applyPlannerEffects(summary.selected);
+            router.push("/journey");
+          }}
+          className="mt-6 w-full rounded-full bg-[#f0a24d] px-5 py-3 font-semibold text-[#091423] transition hover:bg-[#f6b56e]"
+        >
+          Play this day
+        </button>
       </div>
     </div>
   );
