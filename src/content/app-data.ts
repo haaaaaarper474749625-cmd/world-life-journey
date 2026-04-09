@@ -260,3 +260,75 @@ export const handControlPrinciples = [
   "You can prioritize work, study, health, love, or exploration at any time.",
   "Every major system shows trade-offs in money, time, energy, and connection.",
 ];
+
+export const workActions = [
+  {
+    title: "Hostel front-desk shift",
+    summary: "A six-hour shift that pays modestly and improves local trust.",
+    effect: { cash: 48, energy: -14, mood: -2, relationship: 5, skill: 3, health: -1, day: 1 },
+  },
+  {
+    title: "Cafe weekend rush",
+    summary: "Fast cash, high fatigue, and a chance to meet locals.",
+    effect: { cash: 62, energy: -18, mood: -1, relationship: 6, skill: 2, health: -2, day: 1 },
+  },
+  {
+    title: "Remote freelance support",
+    summary: "Lower immersion, but safer for health and cash flow.",
+    effect: { cash: 55, energy: -8, mood: -3, relationship: 0, skill: 5, health: 0, day: 1 },
+  },
+];
+
+export const studyActions = [
+  {
+    title: "Local language class",
+    summary: "Builds confidence and unlocks smoother city interactions.",
+    effect: { cash: -22, energy: -6, mood: 4, relationship: 3, skill: 8, health: 0, day: 1 },
+  },
+  {
+    title: "Cultural workshop",
+    summary: "Good for immersion, contacts, and understanding daily etiquette.",
+    effect: { cash: -18, energy: -4, mood: 8, relationship: 4, skill: 5, health: 0, day: 1 },
+  },
+  {
+    title: "Career micro-course",
+    summary: "Boosts employability for later destinations.",
+    effect: { cash: -30, energy: -8, mood: 1, relationship: 1, skill: 10, health: 0, day: 1 },
+  },
+];
+
+export const healthActions = [
+  {
+    title: "Neighborhood clinic visit",
+    summary: "A practical check-up that stabilizes your body but costs time and money.",
+    effect: { cash: -26, energy: -2, mood: -1, relationship: 0, skill: 0, health: 14, day: 1 },
+  },
+  {
+    title: "Rest and recovery day",
+    summary: "A full reset day with little progress elsewhere.",
+    effect: { cash: -12, energy: 18, mood: 5, relationship: 0, skill: 0, health: 10, day: 1 },
+  },
+  {
+    title: "Buy medicine and early sleep",
+    summary: "Cheaper than a clinic, but less powerful.",
+    effect: { cash: -14, energy: 10, mood: 2, relationship: 0, skill: 0, health: 6, day: 1 },
+  },
+];
+
+export const eventActions = [
+  {
+    title: "Join a local meetup",
+    summary: "High social upside if you have the energy for it.",
+    effect: { cash: -10, energy: -6, mood: 10, relationship: 12, skill: 2, health: 0, day: 1 },
+  },
+  {
+    title: "Say yes to a date invite",
+    summary: "Can deepen emotional routes and raise mood quickly.",
+    effect: { cash: -18, energy: -4, mood: 12, relationship: 15, skill: 0, health: 0, day: 1 },
+  },
+  {
+    title: "Help a friend move apartment",
+    summary: "Not glamorous, but strong for trust and local support.",
+    effect: { cash: -4, energy: -10, mood: 5, relationship: 10, skill: 1, health: -1, day: 1 },
+  },
+];

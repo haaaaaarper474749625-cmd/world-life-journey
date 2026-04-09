@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { cityPanels, quickActions } from "@/content/app-data";
 import { useGameState } from "@/components/game-state-provider";
 
@@ -16,7 +17,7 @@ export function JourneyDashboard() {
           <p className="text-xs uppercase tracking-[0.35em] text-[#f7c58e]">Active city</p>
           <h2 className="mt-4 text-4xl font-semibold text-white">{state.city}</h2>
           <p className="mt-1 text-sm text-[#f7c58e]">
-            {state.profile?.goal ?? "Open simulation"} · {state.profile?.trait ?? "Flexible style"}
+            {state.profile?.goal ?? "Open simulation"} - {state.profile?.trait ?? "Flexible style"}
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-8 text-[#dce6f2]">
             {currentCityPanel.summary}
@@ -58,6 +59,40 @@ export function JourneyDashboard() {
             <p className="text-sm uppercase tracking-[0.28em] text-[#f7c58e]">{state.city}</p>
             <p className="mt-3 text-sm leading-7 text-[#dce6f2]">{item}</p>
           </article>
+        ))}
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {[
+          {
+            href: "/work",
+            title: "Work",
+            summary: "Earn travel money and trade fatigue for survival.",
+          },
+          {
+            href: "/study",
+            title: "Study",
+            summary: "Spend money to gain skill and deeper local access.",
+          },
+          {
+            href: "/health",
+            title: "Health",
+            summary: "Recover before poor condition starts controlling you.",
+          },
+          {
+            href: "/events",
+            title: "Events",
+            summary: "Take social risks that can change mood and relationships.",
+          },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="rounded-[1.75rem] border border-white/10 bg-white/4 p-5 transition hover:border-[#f0a24d]/70"
+          >
+            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-[#c5d0dc]">{item.summary}</p>
+          </Link>
         ))}
       </div>
     </div>

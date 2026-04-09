@@ -47,6 +47,7 @@ type GameStateContextValue = {
   createTraveler: (profile: TravelerProfile) => void;
   applyPlannerEffects: (entries: { label: string; result: string; effect: EffectDelta }[]) => void;
   applyRouteEffect: (routeLabel: string, methodLabel: string, effect: EffectDelta) => void;
+  applyAction: (title: string, effect: EffectDelta) => void;
   resetGame: () => void;
 };
 
@@ -155,6 +156,15 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
               ...current.activityLog,
             ].slice(0, 12),
             routeHistory: [`${routeLabel} via ${methodLabel}`, ...current.routeHistory].slice(0, 12),
+          };
+        });
+      },
+      applyAction(title, effect) {
+        setState((current) => {
+          const next = reduceState(current, effect);
+          return {
+            ...next,
+            activityLog: [`${title} in ${current.city}.`, ...current.activityLog].slice(0, 12),
           };
         });
       },
